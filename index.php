@@ -1,3 +1,20 @@
+<?php
+require('php/utility.php');
+$db = getDbObject();
+$sql = "SELECT texts FROM texts WHERE id=1";
+
+$result = $db->query($sql);
+
+$ilmoittautuneet = array();
+while ($row = $result->fetch()) {
+    $ilmoittautuneet[] = $row;
+}
+var_dump($ilmoittautuneet);
+foreach ($ilmoittautuneet as $rivi) {
+        extract($rivi);
+        echo $texts;
+};
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,7 +35,9 @@
     </nav>
     <!--Header-->
     <header>
+      <?php
 
+      ?>
     </header>
     <!--Main content after this-->
     <div>
