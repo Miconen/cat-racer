@@ -1,6 +1,6 @@
 <?php
-    // PHP Connection requirement
-    require('php/utility.php');
+    require('php/RandomText.php');
+    $CatText = new RandomText();
     $results = $CatText->textQuery();
     ?>
 <!DOCTYPE html>
