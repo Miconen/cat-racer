@@ -99,7 +99,7 @@ class Typing {
         }
         this.logger();
     }
-    logger(e) {
+    logger() {
         console.clear();
         console.log(`Next input: ${this.hidden[this.typedCorrect.length]}`);
         console.log(`Letters Typed (Correct, Typed, Total): ${this.typedCorrect.length} / ${this.typedText.length} / ${this.hidden.length}`);
