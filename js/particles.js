@@ -28,34 +28,7 @@ class Particle {
         this.calcOpacity();
     }
     // Reposition particle once off screen
-    reposition() {
-
-    }
-    calcPositionX() {
-        this.x = Math.floor(canvas.width * Math.random());
-    }
-    calcPositionY () {
-        this.y = Math.floor(canvas.height * Math.random());
-    }
-    calcSpeed() {
-        this.speedX = Math.floor(11 * Math.random()) - 5;
-        while (this.speedX == 0) this.speedX = Math.floor(11 * Math.random()) - 5;
-        this.speedY = Math.floor(11 * Math.random()) - 5;
-        while (this.speedY == 0) this.speedY = Math.floor(11 * Math.random()) - 5;
-    }
-    calcOpacity() {
-        this.opacity = 0.40 * Math.random() + 0.10;
-    }
-    calcSize() {
-        this.size = Math.floor(10 * Math.random()) + 5;
-    }
-    checkOnscreen () {
-        if (this.x >= canvas.width + 100) this.checkOffscreen('right');
-        if (this.x <= 0 - 100) this.checkOffscreen('left');
-        if (this.y >= canvas.height + 100) this.checkOffscreen('below');
-        if (this.y <= 0 - 100) this.checkOffscreen('above');
-    }
-    checkOffscreen (direction) {
+    reposition(direction) {
         // Right
         if (direction == 'right' ) {
             this.x = canvas.width + 50;
@@ -80,6 +53,30 @@ class Particle {
             this.speedX = Math.floor(11 * Math.random()) - 5;
             this.speedY = Math.floor(5 * Math.random()) + 1;
         }
+    }
+    calcPositionX() {
+        this.x = Math.floor(canvas.width * Math.random());
+    }
+    calcPositionY () {
+        this.y = Math.floor(canvas.height * Math.random());
+    }
+    calcSpeed() {
+        this.speedX = Math.floor(11 * Math.random()) - 5;
+        while (this.speedX == 0) this.speedX = Math.floor(11 * Math.random()) - 5;
+        this.speedY = Math.floor(11 * Math.random()) - 5;
+        while (this.speedY == 0) this.speedY = Math.floor(11 * Math.random()) - 5;
+    }
+    calcOpacity() {
+        this.opacity = 0.40 * Math.random() + 0.10;
+    }
+    calcSize() {
+        this.size = Math.floor(10 * Math.random()) + 5;
+    }
+    checkOnscreen () {
+        if (this.x >= canvas.width + 100) this.reposition('right');
+        if (this.x <= 0 - 100) this.reposition('left');
+        if (this.y >= canvas.height + 100) this.reposition('below');
+        if (this.y <= 0 - 100) this.reposition('above');
     }
 }
 // Class instance destroyer
