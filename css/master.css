@@ -31,6 +31,8 @@ span .navbar-text {
     display: inline;
     font-size: 2em;
     color: #FFFFFF;
+    margin-right: 0.4em;
+    white-space: pre;
 }
 
 .letter {

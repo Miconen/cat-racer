@@ -20,7 +20,7 @@ class Particle {
         Particle.instances.push(this);
     }
     // Generate initial particles
-    generateOnscreen() {
+    generate() {
         this.calcPositionX();
         this.calcPositionY();
         this.calcSpeed();
@@ -29,6 +29,7 @@ class Particle {
     }
     // Reposition particle once off screen
     reposition(direction) {
+        // TODO: Use calcSpeed for speed instead of current way in reposition
         // Right
         if (direction == 'right' ) {
             this.x = canvas.width + 50;
@@ -92,7 +93,7 @@ Particle.instances = [];
 var particleMax = 100;
 for (var i = 0; i < particleMax; i++) {
     Particle.instances[i] = new Particle(i);
-    Particle.instances[i].generateOnscreen();
+    Particle.instances[i].generate();
 }
 
 var frameCounter=0;

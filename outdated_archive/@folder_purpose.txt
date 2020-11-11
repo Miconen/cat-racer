@@ -1,0 +1,2 @@
+This folder is for outdated/old code that has been rewritten.
+It's still here just for archiving purposes.

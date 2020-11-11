@@ -55,7 +55,7 @@
                 ?>
             </div>
         </div>
-        <script src="js/master.js" charset="utf-8"></script>
+        <script src="js/typing.js" charset="utf-8"></script>
         <script src="js/particles.js" charset="utf-8"></script>
     </body>
 </html>
