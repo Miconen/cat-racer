@@ -11,10 +11,17 @@ class Typing {
         this.typedCorrectLettersInWord = 0;
         this.typedErrors = 0;
         this.errorBuffer = 3;
+        this.state = 'resumed';
+    }
+    pause() {
+        this.state = 'paused';
+    }
+    resume() {
+        this.state = 'resumed';
     }
     input(e) {
-        // Stop typing if complete
-        if (this.hidden == this.typedText) return;
+        // Stop typing if paused or text complete
+        if (this.state == 'paused' || this.hidden == this.typedText) return;
         // Remove symbol
         if (e.key == 'Backspace' && this.typedErrors > 0 && this.typedText) {
             this.inputRemove();
@@ -53,7 +60,7 @@ class Typing {
         this.typedText += e.key;
         this.typedCorrect += e.key;
         this.typedCorrectLettersInWord++;
-        this.logger();
+        // this.logger();
     }
     inputIncorrect(e) {
         if (this.sentence.getElementsByClassName('word')[this.typedCorrectWords].childElementCount > this.typedCorrectLettersInWord + this.typedErrors) {
@@ -74,14 +81,14 @@ class Typing {
         this.typedText += e.key;
         // Add error
         this.typedErrors++;
-        this.logger();
+        // this.logger();
     }
     inputNext(e) {
         this.typedText += e.key;
         this.typedCorrect += e.key;
         this.typedCorrectWords++;
         this.typedCorrectLettersInWord = 0;
-        this.logger();
+        // this.logger();
     }
     inputRemove() {
         // Remove letter
@@ -97,7 +104,7 @@ class Typing {
             this.sentence.getElementsByClassName('word')[this.typedCorrectWords]
             .getElementsByClassName('letter')[this.typedCorrectLettersInWord + this.typedErrors].className = 'letter';
         }
-        this.logger();
+        // this.logger();
     }
     logger() {
         console.clear();

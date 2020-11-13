@@ -54,3 +54,40 @@ span .navbar-text {
 #textHidden {
     display: none;
 }
+
+#floatingForm {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11111;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(3px);
+}
+
+#floatingFormLogin {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity .5s linear;
+}
+
+#floatingFormRegister {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity .5s linear;
+}
+
+.floatingFormBox {
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 25%;
+    height: auto;
+    z-index: 1111;
+    transform: translate(-50%, -50%);
+}
