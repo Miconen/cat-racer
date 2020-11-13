@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/master.css">
     </head>
     <body>
-        <?php require('php/navbar.html') ?>
+        <?php require('php/navbar.php') ?>
         <!--Particle background-->
         <header>
             <canvas id="canvas" width="300" height="300"></canvas>
