@@ -43,7 +43,6 @@ while (particleMax > PARTICLE_LIST.length) {
 
 // Spawn more particles off screen when older ones disappear
 function particleSpawn(i) {
-    // IDEA: Could use .splice but this causes weird flickering with the particles
     if (i) delete PARTICLE_LIST[i];
 
     var particleStartX = Math.floor(canvas.width * Math.random());
