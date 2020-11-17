@@ -1,8 +1,10 @@
 <?php
-require('DbConnection.php');
-class RandomText extends DbConnection {
+require('dbConnection.php');
+class RandomText extends dbConnection
+{
     // Selects random quote from database (texts table)
-    public function textQuery() {
+    public function textQuery()
+    {
         $connection = $this->getDbObject();
         $sql = "SELECT * FROM texts ORDER BY RAND() LIMIT 1";
         $results = array();
@@ -12,4 +14,3 @@ class RandomText extends DbConnection {
         return $results;
     }
 }
-?>

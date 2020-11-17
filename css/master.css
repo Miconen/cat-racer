@@ -69,6 +69,10 @@ span .navbar-text {
     backdrop-filter: blur(3px);
 }
 
+#floatingForm h3 {
+    margin-bottom: 1rem;
+}
+
 #floatingFormLogin {
     visibility: hidden;
     opacity: 0;

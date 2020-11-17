@@ -1,7 +1,9 @@
 <?php
-class DbConnection {
+class DbConnection
+{
     // Declare database connection from utility.php
-    public function getDbObject() {
+    public function getDbObject()
+    {
         $rdbms = 'mysql';
         $host = 'localhost';
         $db = 'cat-racer';
@@ -17,4 +19,3 @@ class DbConnection {
         return new PDO($connectionString, $user, $pass, $opt);
     }
 }
-?>

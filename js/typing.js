@@ -21,7 +21,7 @@ class Typing {
     }
     input(e) {
         // Stop typing if paused or text complete
-        if (this.state == 'paused' || this.hidden == this.typedText) return;
+        if (this.state == 'paused' || this.hidden == this.typedText || !e.isTrusted) return;
         // Remove symbol
         if (e.key == 'Backspace' && this.typedErrors > 0 && this.typedText) {
             this.inputRemove();
@@ -54,7 +54,7 @@ class Typing {
     }
     inputCorrect(e) {
         this.sentence.getElementsByClassName('word')[this.typedCorrectWords]
-        .getElementsByClassName('letter')[this.typedCorrectLettersInWord].className = 'letter letterCorrect';
+            .getElementsByClassName('letter')[this.typedCorrectLettersInWord].className = 'letter letterCorrect';
 
         // Add letter
         this.typedText += e.key;
@@ -65,7 +65,7 @@ class Typing {
     inputIncorrect(e) {
         if (this.sentence.getElementsByClassName('word')[this.typedCorrectWords].childElementCount > this.typedCorrectLettersInWord + this.typedErrors) {
             this.sentence.getElementsByClassName('word')[this.typedCorrectWords]
-            .getElementsByClassName('letter')[this.typedCorrectLettersInWord + this.typedErrors].className = 'letter letterIncorrect';
+                .getElementsByClassName('letter')[this.typedCorrectLettersInWord + this.typedErrors].className = 'letter letterIncorrect';
         }
         if (this.sentence.getElementsByClassName('word')[this.typedCorrectWords].childElementCount <= this.typedCorrectLettersInWord + this.typedErrors) {
 
@@ -96,13 +96,13 @@ class Typing {
         // Remove error
         this.typedErrors--;
         if (this.sentence.getElementsByClassName('word')[this.typedCorrectWords]
-        .getElementsByClassName('letter')[this.typedCorrectLettersInWord + this.typedErrors]
-        .classList.contains('temporary')) {
+            .getElementsByClassName('letter')[this.typedCorrectLettersInWord + this.typedErrors]
+            .classList.contains('temporary')) {
             this.sentence.getElementsByClassName('word')[this.typedCorrectWords]
-            .getElementsByClassName('letter')[this.typedCorrectLettersInWord + this.typedErrors].remove()
+                .getElementsByClassName('letter')[this.typedCorrectLettersInWord + this.typedErrors].remove()
         } else {
             this.sentence.getElementsByClassName('word')[this.typedCorrectWords]
-            .getElementsByClassName('letter')[this.typedCorrectLettersInWord + this.typedErrors].className = 'letter';
+                .getElementsByClassName('letter')[this.typedCorrectLettersInWord + this.typedErrors].className = 'letter';
         }
         // this.logger();
     }
