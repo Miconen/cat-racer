@@ -19,6 +19,7 @@
 </nav>
 
 <!-- Login & Register popups -->
+<?php // TODO: Add X button to exit out of form/modal
 <div id="floatingForm">
     <form method='post' action="php/account/login.php" id="floatingFormLogin" class="floatingFormBox p-4 shadow-sm rounded" aria-label="Login information" aria-modal="true">
         <h3>Login</h3>
