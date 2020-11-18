@@ -13,6 +13,9 @@ class Typing {
         this.errorBuffer = 3;
         this.state = 'resumed';
     }
+    getText() {
+        return this.hidden;
+    }
     pause() {
         this.state = 'paused';
     }
