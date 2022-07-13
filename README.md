@@ -2,11 +2,11 @@
 Website for typing speed/accuracy improvement.
 
 ## Learnings from project.
-I created this website back when i was still learning more of the basics of programming and web development. Many of the ideas were found from tutorials but were later refactored as i got better.
+I created this website back when i was still learning more of the basics of programming and web development. Many of the ideas were found from tutorials but were later refactored as i got better. In retrospect I'm really proud of this project and how far i got with it.
 
-Utilized a MySQL database for pulling random text strings for the user to type.
-Basic login and registeration with database.
-Unnecessarily fancy particle system for the background.
+Utilized a MySQL database for pulling random text strings for the user to type.\
+Basic login and registeration with database and PHP.
+Unnecessarily fancy particle system for the background written in JavaScript.
 Major struggles with getting the string to be "typable" and representing the users progress in the DOM.
 
 Attachment of how the site functioned:
