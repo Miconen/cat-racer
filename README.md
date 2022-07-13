@@ -2,7 +2,7 @@
 Website for typing speed/accuracy improvement.
 
 ## Learnings from project.
-I created this website back when i was still learning more of the basics of programming and web development. Many of the ideas were found from tutorials but were later refactored as i got better. In retrospect I'm really proud of this project and how far i got with it.
+I finished this website back in November 2020 when i was still learning more of the basics of programming and web development. Many of the ideas were found from tutorials but were later refactored as i got better. In retrospect I'm really proud of this project and how far i got with it.
 
 Utilized a MySQL database for pulling random text strings for the user to type.\
 Basic login and registeration with database and PHP.
